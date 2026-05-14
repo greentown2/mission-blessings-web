@@ -86,31 +86,6 @@
         "createdAt": { "type": "string", "format": "date-time" }
       },
       "required": ["userName", "type", "content", "createdAt"]
-    },
-    "DailyWord": {
-      "title": "Daily Word Video",
-      "description": "The specific YouTube Video ID for the daily word service.",
-      "type": "object",
-      "properties": {
-        "videoId": { "type": "string" },
-        "language": { "type": "string", "enum": ["kr", "en"] },
-        "updatedAt": { "type": "string", "format": "date-time" }
-      },
-      "required": ["videoId", "language"]
-    },
-    "GalleryVideo": {
-      "title": "Gallery Video",
-      "description": "A video in the weekly archive gallery.",
-      "type": "object",
-      "properties": {
-        "id": { "type": "string" },
-        "title": { "type": "string" },
-        "lang": { "type": "string", "enum": ["ko", "en"] },
-        "day": { "type": "string", "enum": ["Mon", "Tue", "Wed", "Thu", "Fri"] },
-        "order": { "type": "number" },
-        "updatedAt": { "type": "string", "format": "date-time" }
-      },
-      "required": ["id", "title", "lang", "day"]
     }
   },
   "firestore": {
@@ -137,14 +112,6 @@
     "/prayerRequests/{requestId}": {
       "schema": "PrayerRequest",
       "description": "Community shared prayer requests and thanksgivings."
-    },
-    "/daily_word/{lang}": {
-      "schema": "DailyWord",
-      "description": "Management of daily word videos."
-    },
-    "/gallery_videos/{videoId}": {
-      "schema": "GalleryVideo",
-      "description": "Weekly archive gallery videos."
     }
   }
 }

@@ -64,19 +64,5 @@ service cloud.firestore {
       allow create: if true;
       allow update, delete: if isDirector();
     }
-
-    match /daily_word/{document=**} {
-      allow read: if true;
-      allow write: if isDirector();
-    }
-
-    match /gallery_videos/{videoId} {
-      allow read: if true;
-      allow write: if isDirector();
-    }
-
-    match /{document=**} {
-      allow read, write: if false;
-    }
   }
 }
